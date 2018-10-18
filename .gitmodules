@@ -1,3 +1,6 @@
 [submodule "p4c"]
 	path = p4c
 	url = https://github.com/cslev/p4c
+[submodule "behavioral-model"]
+	path = behavioral-model
+	url = https://github.com/cslev/behavioral-model
