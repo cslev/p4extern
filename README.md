@@ -32,7 +32,7 @@ Moreover, this *increase()* function in the beginning will not even do calculati
 
 ## Step 1
 Implement your own extern class in a well-defined (but barely documented way :)):
-Create an **increase.cpp** file under the *behavioral-model/targets/* directory or just simply see mine in the repository.
+Create an **increase.cpp** file under the *behavioral-model/targets/* directory or, to easily follow the description below just  see mine in the repository and reproduce later if needed.
 
 ### Step 1.2
 As it can be observed, it has some basic but necessary function calls (init() override and imports (*using bm::....*)) - for more details about this, again refer to the paper shared in the link above.
