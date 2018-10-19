@@ -23,6 +23,10 @@ $ cd p4c
 $ git submodule update --init --recursive
 ```
 
+Then, compile each of the from scratch with all their dependencies to assure yourself if a compilation error happens later on, it is because of your extern related modifications.
+In order to do this, follow the instruction in their corresponding README.md file
+ - [p4c](https://github.com/p4lang/p4c)
+ - [behavioral-model](https://github.com/p4lang/behavioral-model)
 
 # Approach b)
 
