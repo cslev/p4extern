@@ -64,7 +64,7 @@ import_extern_increase();
 ```
 
 ### Step 2.3
-Make our extern class to be compiled and linked. Extend the Makefile.am file by adding `increase.cpp` to the variable `libsimpleswitch_la_SOURCES`, i.e., look for the `libsimpleswitch_la_SOURCES` and make it look like this:
+Make our extern class to be compiled and linked. Extend the `Makefile.am` file by adding `increase.cpp` to the variable `libsimpleswitch_la_SOURCES`, i.e., look for the `libsimpleswitch_la_SOURCES` and make it look like this:
 ```
 libsimpleswitch_la_SOURCES = \
 simple_switch.cpp \
