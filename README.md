@@ -2,11 +2,12 @@
 This repository's aim is to (try to) show how extern functions should be implemented (some more high-level details of implementing a ROHC header compression module as a P4 extern can be found [here](https://arxiv.org/abs/1611.05943).
 
 Basically, there are two ways to do this:
- a) adding your feature to the list of primitives (**primitives.cpp** under behavioral-model/targets/simple_switch/)
- 
- b) or the more proper way of defining it as an extern 
 
-First, we follow the second path and (might) cover the first one as well)
+ a) adding your feature to the basic primitives (**primitives.cpp** under behavioral-model/targets/simple_switch/)
+ 
+ b) or the more proper way of defining it in an extern library
+
+First, we follow path *a)* and (might) cover the *b)* as well)
 
 But, first things first, get the sources
 ```
@@ -27,8 +28,56 @@ Then, compile each of the from scratch with all their dependencies to assure you
 In order to do this, follow the instruction in their corresponding README.md file
  - [p4c](https://github.com/p4lang/p4c)
  - [behavioral-model](https://github.com/p4lang/behavioral-model)
+ 
+# Note
+Each of our modifications in the source code is surrounded by speciel characters:
+```
+-- LEVI (...)
+-- END LEVI
+```
+ 
+# Approach a)
+In this approach, we define our new extern function as a built-in primitive, i.e., we extend our BMv2 with a new function, but practically it won't be an extern, it will be an 'intern'.
+The function itself will be a simple *logger* function that prints out the values of different variables to the stdout in blue color. The name of the function is **p4_logger**
+In order to have our function implemented, we need to modify a couple of files. First, let's modify the compiler (p4c) itself to enable it to compile a p4 application that would call our new function.
+## P4C: p4include/v1model.h
+Define the function as follows:
+```
+extern void p4_logger<T>(in T a);
+```
+## P4C: frontends/p4/fromv1.0/v1model.h
+Add the new function to the constructor of V1Model:
+```
+class V1Model : public ::Model::Model {
+ protected:
+    V1Model() :
+    ...
+    p4_logger("p4_logger"),
+    ...
+```
 
-# Approach b)
+Define it as well in the list of public fields:
+```
+public:
+    ...
+    ::Model::Elem       p4_logger;
+    ...
+```
+## P4C: frontends/p4/fromv1.0/programStructure.cpp
+We also need to populate its name in the ProgramStructure by adding **p4_logger** into the *used_names[]* array:
+```
+void ProgramStructure::populateOutputNames() {
+    static const char* used_names[] = {
+    ...
+    "p4_logger",
+    ...
+```
+
+## P4C: backends/bmv2/simple_switch/simpleSwitch.h:
+
+
+
+# Approach b) *(incomplete - only hints and basics behind the idea is shown, but does not work (yet))*
 
 ## Modifications to the behavioral-model
 
