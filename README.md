@@ -78,7 +78,7 @@ void ProgramStructure::populateOutputNames() {
     ...
 ```
 
-## P4C: backends/bmv2/simple_switch/simpleSwitch.h:
+## P4C: backends/bmv2/simple_switch/simpleSwitch.h
 Next, we need to add the definition of our function to the backend as well. One can see from this file how extern functions are defined according to their type, e.g., only a function, function and model, object and instance, etc.
 Since in our case, we only create a simple function we will add the following line to the source:
 ```
