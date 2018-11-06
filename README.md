@@ -31,10 +31,12 @@ In order to do this, follow the instruction in their corresponding README.md fil
  - [behavioral-model](https://github.com/p4lang/behavioral-model)
  
 # Note
-Each of our modifications in the source code is surrounded by speciel characters:
+The details shown here are already materialized in the source code you have just downloaded, but we detail each step we have made to let you know how you can do this on your own.
+Thus, each of our modifications in the source code is surrounded by the following patterns:
 ```
--- LEVI (...)
--- END LEVI
+//-- LEVI (...)
+<source code>
+//-- END LEVI
 ```
  
 # Approach a)
