@@ -4,9 +4,9 @@ Note that the steps described here are working, however we did not have too much
 
 Basically, there are two ways to do this:
 
- a) adding your feature to the basic primitives (**primitives.cpp** under behavioral-model/targets/simple_switch/)
+ **Approach a)** adding your feature to the basic primitives (**primitives.cpp** under behavioral-model/targets/simple_switch/)
  
- b) or the more proper way of defining it in an extern library
+ **Approach b)** or the more proper way of defining it in an extern library
 
 First, we follow path *a)* and (might) cover the *b)* as well)
 
