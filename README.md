@@ -48,6 +48,8 @@ Define the function as follows:
 ```
 extern void p4_logger<T>(in T a);
 ```
+As of now, it seems that having the generic/templated type T here allows us to not specify explicitly how many bits we wait, therefore our function could be more generic and can print out any values.
+
 ## P4C: frontends/p4/fromv1.0/v1model.h
 Add the new function to the constructor of V1Model:
 ```
@@ -76,7 +78,7 @@ void ProgramStructure::populateOutputNames() {
     ...
 ```
 
-## P4C: backends/bmv2/simple_switch/simpleSwitch.h:
+## P4C: backends/bmv2/simple_switch/simpleSwitch.h
 Next, we need to add the definition of our function to the backend as well. One can see from this file how extern functions are defined according to their type, e.g., only a function, function and model, object and instance, etc.
 Since in our case, we only create a simple function we will add the following line to the source:
 ```
