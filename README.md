@@ -6,7 +6,7 @@ Basically, there are two ways to do this:
 
  **Approach a)** adding your feature to the basic primitives (**primitives.cpp** under behavioral-model/targets/simple_switch/)
  
- **Approach b)** or the more proper way of defining it in an extern library
+ **Approach b)** or the more proper way of defining it in an extern library (**INCOMPLETE AT THE MOMENT**)
 
 First, we follow path *a)* and (might) cover the *b)* as well)
 
