@@ -4,6 +4,3 @@
 [submodule "behavioral-model"]
 	path = behavioral-model
 	url = https://github.com/cslev/behavioral-model
-[submodule "p4debug"]
-	path = p4debug
-	url = https://github.com/cslev/p4debug
