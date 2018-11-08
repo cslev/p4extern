@@ -149,21 +149,21 @@ What this application in essence will do is that any time a packet is received o
 
 Compile your p4 application with the new compiler:
 ```
-p4c/build$ ./p4c-bm2-ss ../../p4debug/monitoring.p4 -o ../../p4debug/monitoring.json
+p4c/build$ ./p4c-bm2-ss ../../monitoring.p4 -o ../../monitoring.json
 ```
 And finally, run it with the new BMv2:
 ```
-p4extern$ sudo behavioral-model/targets/simple_switch/simple_switch -i 0@eth0 -i 1@eth1 --log-console p4debug/monitoring.json 
+p4extern$ sudo behavioral-model/targets/simple_switch/simple_switch -i 0@eth0 -i 1@eth1 --log-console monitoring.json 
 ```
 Note that the `p4debug` application here already contains the function call of `p4_logger`. 
 
 After the application is running, send a packet to one of its port it will print out these variables in blue color:
 ```
-[11:16:15.258] [bmv2] [T] [thread 27024] [0.0] [cxt 0] ../../p4debug/monitoring.p4(531) Primitive p4_logger(hdr.ipv4.srcAddr)
+[11:16:15.258] [bmv2] [T] [thread 27024] [0.0] [cxt 0] ../../monitoring.p4(531) Primitive p4_logger(hdr.ipv4.srcAddr)
 [P4 logger]	 a000001]
-[11:16:15.258] [bmv2] [T] [thread 27024] [0.0] [cxt 0] ../../p4debug/monitoring.p4(532) Primitive p4_logger(hdr.ipv4.hdrChecksum)
+[11:16:15.258] [bmv2] [T] [thread 27024] [0.0] [cxt 0] ../../monitoring.p4(532) Primitive p4_logger(hdr.ipv4.hdrChecksum)
 [P4 logger]	 ce8]
-[11:16:15.258] [bmv2] [T] [thread 27024] [0.0] [cxt 0] ../../p4debug/monitoring.p4(533) Primitive p4_logger((bit<64>)0x3FF199999999999A)
+[11:16:15.258] [bmv2] [T] [thread 27024] [0.0] [cxt 0] ../../monitoring.p4(533) Primitive p4_logger((bit<64>)0x3FF199999999999A)
 [P4 logger]	 3ff199999999999a]
 ```
 
