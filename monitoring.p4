@@ -529,6 +529,9 @@ control MyIngress(inout headers hdr,
     action portfwd(egressSpec_t port)
     {
 	p4_logger(hdr.ipv4.srcAddr);
+	p4_logger(hdr.ipv4.hdrChecksum);
+	p4_logger((bit<64>)0x3FF199999999999A);
+
         standard_metadata.egress_spec = port;
     }
     table port_exact
