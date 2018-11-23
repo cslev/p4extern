@@ -8,18 +8,18 @@ Basically, there are two ways to do this:
  
  **Approach b)** or the more proper way of defining it in an extern library (**INCOMPLETE AT THE MOMENT**)
 
-First, we follow path *a)* and (might) cover the *b)* as well)
+First, we follow path *a)* and (might) cover path *b)* as well)
 
-But, first things first, get the sources
+But, first things first: get the sources
 ```
 $ git clone --recursive https://github.com/cslev/p4extern 
 ```
-As one can see, it contains the two submodules (that need to be modified) we will need during implementing and supporting an extern: 
+As one can see, it contains two submodules (that need to be modified) we will need during implementing and supporting an extern: 
  - **BMv2** itself (we need to extend the switch architecture to support new externs - as one would need to implement an extern in a physical P4 switch as well)
  - **P4C compiler** to support calling your extern function
 
 
-In order to ensure the submodules also checked out their further submodules, do the following steps for p4c
+In order to ensure that submodules also checked out their further submodules, do the following steps for p4c
 ```
 $ cd p4c
 $ git submodule update --init --recursive
@@ -31,8 +31,8 @@ In order to do this, follow the instruction in their corresponding README.md fil
  - [behavioral-model](https://github.com/p4lang/behavioral-model)
  
 # Note
-The details shown here are already materialized in the source code you have just downloaded, but we detail each step we have made to let you know how you can do this on your own.
-Thus, each of our modifications in the source code is surrounded by the following patterns:
+The details shown here are already materialized in the source code you have just downloaded, but we will guide you through each step we have made to let you know how you can redo this on your own.
+Thus, each of our modifications in the source code is surrounded by the following pattern:
 ```
 //-- LEVI (...)
 <source code>
