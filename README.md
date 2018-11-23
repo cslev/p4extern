@@ -48,7 +48,7 @@ Define the function as follows:
 ```
 extern void p4_logger<T>(in T a);
 ```
-As of now, it seems that having the generic/templated type T here allows us to not specify explicitly how many bits we wait, therefore our function could be more generic and can print out any values.
+As of now, it seems that having the generic/templated type T here allows us to not specify explicitly how many bits we are expecting as a parameter, therefore our function could be more generic and can print out (m)any values.
 
 ## P4C: frontends/p4/fromv1.0/v1model.h
 Add the new function to the constructor of V1Model:
