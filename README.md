@@ -43,7 +43,7 @@ Thus, each of our modifications in the source code is surrounded by the followin
 In this approach, we define our new extern function as a built-in primitive, i.e., we extend our BMv2 with a new function, but practically it won't be an extern, it will be an 'intern'.
 The function itself will be a simple *logger* function that prints out the values of different variables to the standaard output in blue color. The name of the function is **p4_logger**
 In order to have our function implemented, we need to modify a couple of files. First, let's modify the compiler (p4c) itself to enable it to compile a p4 application that would call our new function.
-## P4C: p4include/v1model.h
+## P4C: p4include/v1model.p4
 Define the function as follows:
 ```
 extern void p4_logger<T>(in T a);
