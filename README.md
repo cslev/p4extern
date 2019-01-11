@@ -169,7 +169,7 @@ After the application is running, send a packet to one of its port it will print
 
 
 
-# Approach b) *(incomplete - only hints and basics behind the idea is shown, but does not work (yet))*
+# Approach b) *(incomplete - only hints and basics behind the idea are shown, but does not work (yet))*
 
 ## Modifications to the behavioral-model
 
